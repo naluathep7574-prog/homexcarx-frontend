@@ -47,7 +47,7 @@ function Home() {
       <table className="table">
         <thead>
           <tr>
-            <th>ชื่อ</th>
+            <th>ชื่อ-นามสกุล</th>
             <th>อายุ</th>
             <th>สถานะสุขภาพ</th>
             <th>ข้อมูลการติดต่อ</th>
@@ -97,13 +97,17 @@ function AddElderly() {
     <div className="container">
       <h1>เพิ่มข้อมูลผู้สูงอายุ</h1>
       <form onSubmit={handleAddElderly} className="form">
-        <input type="text" placeholder="ชื่อ" value={newElderly.name}
+      <label className="form-label">ชื่อ-นามสกุล:</label>
+        <input type="text" placeholder="กรอกชื่อ-นามสกุล" value={newElderly.name}
           onChange={(e) => setNewElderly({ ...newElderly, name: e.target.value })} required />
-        <input type="number" placeholder="อายุ" value={newElderly.age}
+        <label className="form-label">อายุ:</label>
+        <input type="number" placeholder="กรอกอายุ" value={newElderly.age}
           onChange={(e) => setNewElderly({ ...newElderly, age: e.target.value })} required />
-        <input type="text" placeholder="สถานะสุขภาพ" value={newElderly.health_status}
+        <label className="form-label">สถานะสุขภาพ:</label>
+        <input type="text" placeholder="กรอกสถานะสุขภาพ" value={newElderly.health_status}
           onChange={(e) => setNewElderly({ ...newElderly, health_status: e.target.value })} required />
-        <input type="text" placeholder="ข้อมูลการติดต่อ" value={newElderly.contact_info}
+        <label className="form-label">ข้อมูลการติดต่อ:</label>
+        <input type="text" placeholder="กรอกข้อมูลการติดต่อ" value={newElderly.contact_info}
           onChange={(e) => setNewElderly({ ...newElderly, contact_info: e.target.value })} required />
         <button type="submit">เพิ่มข้อมูล</button>
       </form>
@@ -148,17 +152,17 @@ function EditElderly() {
     <div className="container">
       <h1>แก้ไขข้อมูลผู้สูงอายุ</h1>
       <form onSubmit={handleUpdateElderly} className="form">
-      <label className="form-label">ชื่อ:</label>
-        <input type="text" placeholder="ชื่อ" value={elderly.name}
+      <label className="form-label">ชื่อ-นามสกุล:</label>
+        <input type="text" placeholder="แก้ไขชื่อ-นามสกุล" value={elderly.name}
           onChange={(e) => setElderly({ ...elderly, name: e.target.value })} required />
         <label className="form-label">อายุ:</label>
-        <input type="number" placeholder="อายุ" value={elderly.age}
+        <input type="number" placeholder="แก้ไขอายุ" value={elderly.age}
           onChange={(e) => setElderly({ ...elderly, age: e.target.value })} required />
         <label className="form-label">สถานะสุขภาพ:</label>
-        <input type="text" placeholder="สถานะสุขภาพ" value={elderly.health_status}
+        <input type="text" placeholder="แก้ไขสถานะสุขภาพ" value={elderly.health_status}
           onChange={(e) => setElderly({ ...elderly, health_status: e.target.value })} required />
         <label className="form-label">ข้อมูลการติดต่อ:</label>
-        <input type="text" placeholder="ข้อมูลการติดต่อ" value={elderly.contact_info}
+        <input type="text" placeholder="แก้ไขข้อมูลการติดต่อ" value={elderly.contact_info}
           onChange={(e) => setElderly({ ...elderly, contact_info: e.target.value })} required />
         <button type="submit">อัปเดตข้อมูล</button>
       </form>
