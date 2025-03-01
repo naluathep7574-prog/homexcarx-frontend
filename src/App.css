@@ -1,0 +1,117 @@
+/* 🌿 สไตล์มินิมอล ถนอมสายตา */
+body {
+  background-color: #D2B48C; /* สีขาวนวล */
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 🏡 กล่องเนื้อหา */
+.container {
+  max-width: 900px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📝 หัวข้อ */
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* 🔹 แบบฟอร์ม */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+input {
+  background: #fafafa;
+}
+
+/* 🎨 ปุ่มหลัก */
+button {
+  background: #6e8096; /* น้ำเงินหม่น */
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #546478;
+}
+
+/* 📋 ตารางข้อมูล */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #6e8096; /* หัวตารางน้ำเงินหม่น */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ❌ ปุ่มลบ */
+td button {
+  background: #e57373;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+td button:hover {
+  background: #d32f2f;
+}
+
+/* 🔙 ปุ่มย้อนกลับ */
+.back-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background: #a3c9a8; /* เขียวมิ้นต์ */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #87b593;
+}

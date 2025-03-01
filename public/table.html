@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายชื่อผู้สูงอายุ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>รายชื่อผู้สูงอายุ</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ชื่อ</th>
+                    <th>อายุ</th>
+                    <th>สุขภาพ</th>
+                    <th>ติดต่อ</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="elderlyTable"></tbody>
+        </table>
+    </div>
+
+    <script>
+        async function fetchElderly() {
+            const response = await fetch('/api/elderly');
+            const data = await response.json();
+
+            const tableBody = document.getElementById('elderlyTable');
+            tableBody.innerHTML = '';
+
+            data.forEach(person => {
+                const row = `<tr>
+                    <td>${person.name}</td>
+                    <td>${person.age}</td>
+                    <td>${person.health_status}</td>
+                    <td>${person.contact_info}</td>
+                    <td><button onclick="deleteElderly(${person.id})">ลบ</button></td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        async function deleteElderly(id) {
+            await fetch(`/api/elderly/${id}`, { method: 'DELETE' });
+            fetchElderly();
+        }
+
+        fetchElderly();
+    </script>
+</body>
+</html>
